@@ -1,0 +1,17 @@
+<h1>Applications</h1>
+<table class="table">
+    <tbody>
+        <tr ng-repeat="serviceClient in serviceClients">
+            <td>
+                {{serviceClient.name}}
+            </td>
+            <td>
+                <!--<button ng-click="remove(serviceClient._id)" class="btn btn-danger">Remove</button>-->
+                <!--<button ng-click="select(serviceClient._id)" class="btn btn-warning">Select</button>-->
+                <a href="#/applications/edit/{{serviceClient._id}}" class="btn btn-warning pull-right">Edit</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<a href="#/applications/new" class="btn btn-success btn-block">Add</a>
