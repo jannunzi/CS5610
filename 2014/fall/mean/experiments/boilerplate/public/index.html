@@ -1,0 +1,43 @@
+<html>
+<head>
+    <title>Application Maker</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <script src="js/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="features/applications/service.js"></script>
+    <script src="features/applications/controller.js"></script>
+</head>
+<body ng-app="ApplicationMaker">
+    <div class="container" ng-controller="ApplicationCtrl">
+        <h1>Applications</h1>
+
+        {{message}}
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>&nbsp;</th>
+                </tr>
+                <tr>
+                    <td>
+                        <input ng-model="application.name" class="form-control" />
+                    </td>
+                    <td>
+                        <button ng-click="create()" class="btn btn-primary">Add</button>
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="application in applications">
+                    <td>{{application.name}}</td>
+                    <td>
+                        <button ng-click="remove(application._id)" class="btn btn-danger">Remove</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+
